@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulcis Attar | Quality That Will Make You Smile</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #080808;
+            --bg-card: #121212;
+            --bg-card-hover: #181818;
+            --gold-primary: #d4af37;
+            --gold-light: #f5e6ab;
+            --gold-dark: #aa771c;
+            --gold-gradient: linear-gradient(135deg, #c5a059 0%, #fdf0a6 50%, #9e721d 100%);
+            --gold-glow: rgba(212, 175, 55, 0.15);
+            --text-light: #f8f8f8;
+            --text-muted: #b0b0b0;
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-gold-hover: rgba(212, 175, 55, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, .brand-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1.5px;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 6%;
+            background-color: rgba(8, 8, 8, 0.92);
+            border-bottom: 1px solid var(--border-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+        }
+
+        /* Compact Nav Button */
+        .nav-btn {
+            background: var(--gold-gradient);
+            color: #080808;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Hero Section */
+        header.hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: radial-gradient(circle at center, #1c170d 0%, #080808 75%);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+        }
+
+        .hero-logo-container {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo-img {
+            width: 140px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-gold);
+            padding: 6px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 25px var(--gold-glow);
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .hero .tagline {
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--gold-light);
+            margin-bottom: 22px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .hero .description {
+            max-width: 620px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-size: 0.92rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: #080808;
+            padding: 14px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold-light);
+            border: 1px solid var(--border-gold);
+            padding: 13px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.08);
+            border-color: var(--gold-primary);
+            color: #ffffff;
+        }
+
+        /* Products Showcase */
+        .section-padding {
+            padding: 80px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 45px;
+            letter-spacing: 0.5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 14px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            background-color: var(--bg-card-hover);
+            border-color: var(--border-gold-hover);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--gold-glow);
+        }
+
+        .card-img {
+            width: 100%;
+            max-width: 220px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid var(--border-gold);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .product-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--gold-light);
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: inline-block;
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--gold-primary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .card-btn:hover {
+            color: var(--gold-light);
+            border-color: var(--gold-light);
+            letter-spacing: 1.5px;
+        }
+
+        /* Benefits / Features */
+        .benefits-section {
+            background-color: #0c0c0c;
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            flex: 1 1 280px;
+            text-align: center;
+            padding: 25px 20px;
+            background: rgba(18, 18, 18, 0.5);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #040404;
+            padding: 60px 5% 35px;
+            text-align: center;
+        }
+
+        .footer-info {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .footer-info strong {
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: color 0.3s ease;
+            border: 1px solid var(--border-gold);
+            padding: 8px 18px;
+            border-radius: 20px;
+            background-color: rgba(18, 18, 18, 0.6);
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+            border-color: var(--gold-primary);
+            background-color: rgba(212, 175, 55, 0.15);
+        }
+
+        .copyright {
+            font-size: 0.78rem;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero .tagline {
+                font-size: 0.95rem;
+            }
+            .nav-logo {
+                font-size: 1rem;
+            }
+            .nav-btn {
+                padding: 5px 12px;
+                font-size: 0.72rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="nav-logo">DULCIS ATTAR</a>
+        <a href="https://wa.me/c/2349011605909" target="_blank" class="nav-btn">WhatsApp Catalog</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-logo-container">
+            <img src="logo.jpg" alt="Dulcis Attar Logo" class="hero-logo-img">
+        </div>
+        
+        <h1 class="gold-text">DULCIS ATTAR</h1>
+        <p class="tagline">Quality that will make you smile.</p>
+        
+        <p class="description">
+            Welcome to Dulcis Attar, where exceptional fragrances meet unparalleled quality. Indulge in our carefully curated collection of concentrated perfume oils, Eau De Parfum, and deodorants, designed to leave a lasting impression.
+        </p>
+
+        <div class="cta-container">
+            <a href="https://wa.me/c/2349011605909" target="_blank" class="btn-primary">
+                🛍️ View WhatsApp Catalog
+            </a>
+            <a href="https://wa.me/2349011605909?text=Hello%20Dulcis%20Attar,%20I%20would%20like%20to%20inquire%20about%20your%20fragrance%20products." target="_blank" class="btn-secondary">
+                💬 Chat Directly on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Featured Collections -->
+    <section class="section-padding">
+        <h2 class="section-title gold-text">Featured Collections</h2>
+        <p class="section-subtitle">Explore our signature range of long-lasting scents</p>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="image1.png" alt="Perfume Oils" class="card-img">
+                <h3>Perfume Oils</h3>
+                <p>Pure, concentrated oil blends crafted for maximum longevity and intimate sillage.</p>
+                <a href="https://wa.me/c/2349011605909" target="_blank" class="card-btn">ORDER OILS →</a>
+            </div>
+
+            <div class="product-card">
+                <img src="image2.jpg" alt="Eau De Parfum" class="card-img">
+                <h3>Eau De Parfum</h3>
+                <p>High-projection spray perfumes blended to give you an undeniable aura of luxury.</p>
+                <a href="https://wa.me/c/2349011605909" target="_blank" class="card-btn">ORDER EDP →</a>
+            </div>
+
+            <div class="product-card">
+                <img src="image3.png" alt="Deodorants" class="card-img">
+                <h3>Deodorants</h3>
+                <p>Premium body protection and all-day odor control infused with captivating notes.</p>
+                <a href="https://wa.me/c/2349011605909" target="_blank" class="card-btn">ORDER DEODORANTS →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding benefits-section">
+        <h2 class="section-title gold-text">Why Dulcis Attar?</h2>
+        <p class="section-subtitle">Crafted with precision, delivered with care</p>
+
+        <div class="features-list">
+            <div class="feature-item">
+                <h4>✨ Concentrated Quality</h4>
+                <p>Formulated with high-grade fragrance compounds for superior stay-on power.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🌟 Guaranteed Satisfaction</h4>
+                <p>Every scent is formulated to live up to our promise: quality that will make you smile.</p>
+            </div>
+            <div class="feature-item">
+                <h4>📦 Easy WhatsApp Checkout</h4>
+                <p>Browse, select, and finalize your orders effortlessly through our direct WhatsApp channel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>Dulcis Attar Perfumery</strong></p>
+            <p>📍 Obi Motors, Umuorii Uratta in Owerri North L.G.A., Imo State, Nigeria</p>
+            <p>✉️ dulcisattar@gmail.com | 📱 +234 901 160 5909</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://instagram.com/dulcisattar" target="_blank">Instagram (@dulcisattar)</a>
+            <a href="https://www.facebook.com/profile.php?id=61590540001399" target="_blank">Facebook (Dulcis Attar)</a>
+        </div>
+
+        <p class="copyright">&copy; 2026 Dulcis Attar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
